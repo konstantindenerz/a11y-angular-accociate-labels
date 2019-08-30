@@ -1,17 +1,24 @@
-import {Directive, OnInit} from '@angular/core';
+import {Directive, OnDestroy, OnInit} from '@angular/core';
+import {BehaviorSubject, combineLatest, Subscription} from 'rxjs';
+import {filter} from 'rxjs/operators';
 import {InputDirective} from './input.directive';
 import {LabelDirective} from './label.directive';
-
-export const FOR_ATTRIBUTE = 'for';
 
 @Directive({
   selector: 'form-field',
 })
-export class FormFieldIdSyncDirective implements OnInit {
-  label: LabelDirective;
-  input: InputDirective;
+export class FormFieldIdSyncDirective implements OnInit, OnDestroy {
+
+  public label = new BehaviorSubject<LabelDirective>(undefined);
+  public input = new BehaviorSubject<InputDirective>(undefined);
+  private subscription = Subscription.EMPTY;
 
   public ngOnInit(): void {
-    this.label.elementRef.nativeElement.setAttribute(FOR_ATTRIBUTE, this.input.id);
+    this.subscription = combineLatest(this.input, this.label).pipe(filter(([input, label]) => !!input && !!label))
+      .subscribe(([input, label]) => label.for = input.id);
+  }
+
+  public ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

@@ -18,7 +18,7 @@ export class InputDirective {
               @Optional() readonly formField: FormFieldIdSyncDirective) {
     this.elementRef.nativeElement.setAttribute(ID_ATTRIBUTE, `${this.idProvider.id}`);
     if (formField) {
-      formField.input = this;
+      formField.input.next(this);
     }
   }
 }
