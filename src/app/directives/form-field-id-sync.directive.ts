@@ -5,7 +5,7 @@ import {InputDirective} from './input.directive';
 import {LabelDirective} from './label.directive';
 
 @Directive({
-  selector: 'form-field',
+  selector: 'form-field,[formField]',
 })
 export class FormFieldIdSyncDirective implements OnInit, OnDestroy {
 
