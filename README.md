@@ -1,4 +1,4 @@
-# a11y-label-for-id-sync
+# a11y-angular-accociate-labels
 
 Associate labels explicitly with their controls (inputs).
 
