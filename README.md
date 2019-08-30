@@ -1,5 +1,7 @@
 # a11y-label-for-id-sync
 
+Associate labels explicitly with their controls (inputs).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
 ## Development server
