@@ -1,4 +1,4 @@
-First form field
+Form field with label and plain input
 <form-field>
   <label>Label</label>
   <div>
@@ -6,7 +6,7 @@ First form field
   </div>
 </form-field>
 
-Second form field
+Form field with label and wrapped input
 <form-field>
   <label>Label 2</label>
   <div>
@@ -14,7 +14,7 @@ Second form field
   </div>
 </form-field>
 
-Third form field
+Form field with label and dynamic input
 <form-field>
   <label>Label 2</label>
   <button (click)="show = true">show Field</button>
@@ -23,5 +23,10 @@ Third form field
   </div>
 </form-field>
 
-
-
+Plain div (form field) with label and wrapped input
+<div formField>
+  <label>Label 2</label>
+  <div>
+    <text-field></text-field>
+  </div>
+</div>

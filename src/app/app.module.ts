@@ -4,17 +4,17 @@ import {FormFieldComponent} from './components/form-field/form-field.component';
 
 import {AppComponent} from './components/root/app.component';
 import {TextFieldComponent} from './components/text-field/text-field.component';
-import {FormFieldIdSyncDirective} from './directives/form-field-id-sync.directive';
-import {InputDirective} from './directives/input.directive';
-import {LabelDirective} from './directives/label.directive';
+import {InputIdToLabelForSyncDirective} from './directives/a11y/input-id-to-label-for-sync.directive';
+import {InputProviderDirective} from './directives/a11y/input-provider.directive';
+import {LabelProviderDirective} from './directives/a11y/label-provider.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormFieldComponent,
-    InputDirective,
-    LabelDirective,
-    FormFieldIdSyncDirective,
+    InputProviderDirective,
+    LabelProviderDirective,
+    InputIdToLabelForSyncDirective,
     TextFieldComponent,
   ],
   imports: [
